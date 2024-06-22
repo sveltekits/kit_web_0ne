@@ -1,1 +1,1 @@
-<h1>Welcome to SvelteKit</h1>
+<h1 class="text-green-700">Welcome to SvelteKit</h1>

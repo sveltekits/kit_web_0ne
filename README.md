@@ -1,38 +1,30 @@
-# create-svelte
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
+# 서브릿 설치
+```
 npm create svelte@latest my-app
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# TailwindCss 설치
 ```
+1. npm install -D tailwindcss postcss autoprefixer
+2. npx tailwindcss init tailwind.config.cjs -p
+--> Created Tailwind CSS config file: tailwind.config.cjs
+--> Created PostCSS config file: postcss.config.js
 
-## Building
+3. tailwind.config.cjs 파일 내용 변경
+    export default {
+        content: [],
+        ==> content: ['./src/**/*.{html,js,svelte,ts}'],
+        theme: {
+            extend: {}
+        },
+        plugins: []
+    };
+4. src/app.css 생성
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
 
-To create a production version of your app:
+    // vscode에서는 플러그인 PostCSS Language Support를
+    // 설치하면 더 이상 경고 문구가 보이지 않는다
 
-```bash
-npm run build
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
